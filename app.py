@@ -95,15 +95,7 @@ elif menu == "✍️ AI Content & SEO Generator":
                     
                     st.markdown("### 📄 Full Article Body")
                     st.write(body)
-                    
-                    export_data = f"Titles:\n1. {t1}\n2. {t2}\n\nMeta:\n{desc}\n\nBody:\n{body}"
-                    
-                    st.download_button(
-                        label="📥 Download Generated Content (.txt)",
-                        data=export_data,
-                        file_name="content.txt",
-                        
-                    
+                                                  
  
 elif menu == "💬 Social Media Auto-DM":
     st.title("💬 Social Media Auto-DMs")
