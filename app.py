@@ -65,7 +65,7 @@ elif menu == "📱 Bio Link & Store":
     if st.button("Publish Bio Store"):
         st.success(f"Your store '{store_title}' is now live and mobile-optimized!")
 
-        elif menu == "✍️ AI Content & SEO Generator":
+           elif menu == "✍️ AI Content & SEO Generator":
         st.title("✍️ AI Content & SEO Writer")
         st.write("Generate high-ranking articles, catchy titles, and SEO meta tags instantly.")
         
@@ -103,12 +103,8 @@ elif menu == "📱 Bio Link & Store":
                         data=export_data,
                         file_name="content.txt",
                         mime="text/plain"
-                    )
-            else:
-                st.warning("Please enter a keyword first.")
-
-
-
+                    
+ 
 elif menu == "💬 Social Media Auto-DM":
     st.title("💬 Social Media Auto-DMs")
     st.write("Automatically reply to comments and send direct messages to your followers.")
