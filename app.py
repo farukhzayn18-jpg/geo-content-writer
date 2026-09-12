@@ -63,9 +63,8 @@ elif menu == "📱 Bio Link & Store":
     product_link = st.text_input("Add Product or Social Link", "https://example.com")
     
     if st.button("Publish Bio Store"):
-        st.success(f"Your store '{store_title}' is now live and mobile-optimized!")
-
-           elif menu == "✍️ AI Content & SEO Generator":
+        st.success(f"Your store '{store_title}' is now live and mobile-optimized!") 
+elif menu == "✍️ AI Content & SEO Generator":
         st.title("✍️ AI Content & SEO Writer")
         st.write("Generate high-ranking articles, catchy titles, and SEO meta tags instantly.")
         
