@@ -65,62 +65,48 @@ elif menu == "📱 Bio Link & Store":
     if st.button("Publish Bio Store"):
         st.success(f"Your store '{store_title}' is now live and mobile-optimized!")
 
-    elif menu == "✍️ AI Content & SEO Generator":
+        elif menu == "✍️ AI Content & SEO Generator":
         st.title("✍️ AI Content & SEO Writer")
         st.write("Generate high-ranking articles, catchy titles, and SEO meta tags instantly.")
         
-        keyword_input = st.text_input("Enter your Main Keyword or Topic (e.g., 'Best Side Hustles 2026')", "Best Side Hustles 2026")
+        keyword_input = st.text_input("Enter your Main Keyword or Topic:", "Best Side Hustles 2026")
 
         if st.button("Generate Professional Content"):
             if keyword_input:
                 with st.spinner("Generating high-quality content..."):
-                    blog_title_1 = f"Ultimate Guide: {keyword_input} Explained for Beginners"
-                    blog_title_2 = f"7 Proven Secrets About {keyword_input} You Need to Know"
-                    blog_title_3 = f"How to Master {keyword_input} in 2026 Like a Pro"
+                    t1 = f"Ultimate Guide: {keyword_input} for Beginners"
+                    t2 = f"7 Proven Secrets About {keyword_input}"
                     
-                    meta_desc = f"Looking for {keyword_input}? Discover everything you need to know with our expert guide, tips, and step-by-step breakdown."
+                    desc = f"Looking for {keyword_input}? Discover everything you need to know with our expert guide and tips."
                     
-                    article_body = f"""
-## Introduction
-Welcome to the comprehensive guide on **{keyword_input}**. In today's fast-paced digital world, understanding this topic is crucial for success.
-
-## Why {keyword_input} Matters
-- **Efficiency:** Save time and optimize your daily workflow.
-- **Growth:** Scale your results effortlessly with proven strategies.
-- **Results:** Achieve long-term success with structured planning.
-
-## Key Strategies & Best Practices
-1. **Analyze Your Niche:** Always start by researching your target audience.
-2. **Execute Consistently:** Consistency is the key to maintaining high performance.
-3. **Optimize & Scale:** Use data-driven decisions to grow further.
-
-## Conclusion
-Mastering **{keyword_input}** takes time, but with the right approach, you can achieve remarkable results. Start applying these steps today!
-                    """
+                    body = "Introduction:\nWelcome to the complete guide on " + keyword_input + ".\n\n"
+                    body += "Why It Matters:\n- Saves time and optimizes workflow.\n- Scales results with proven strategies.\n\n"
+                    body += "Key Strategies:\n1. Research your target audience.\n2. Execute consistently.\n\n"
+                    body += "Conclusion:\nMastering this topic takes time, but brings remarkable results."
                     
                     st.success("Content Generated Successfully!")
                     
                     st.markdown("### 📌 Suggested Catchy Titles")
-                    st.text(blog_title_1)
-                    st.text(blog_title_2)
-                    st.text(blog_title_3)
+                    st.text(t1)
+                    st.text(t2)
                     
                     st.markdown("### 🔍 SEO Meta Description")
-                    st.info(meta_desc)
+                    st.info(desc)
                     
-                    st.markdown("### 📄 Full Article Outline & Body")
-                    st.markdown(article_body)
+                    st.markdown("### 📄 Full Article Body")
+                    st.write(body)
                     
-                    full_export_text = f"Titles:\n1. {blog_title_1}\n2. {blog_title_2}\n\nMeta Description:\n{meta_desc}\n\nArticle:\n{article_body}"
+                    export_data = f"Titles:\n1. {t1}\n2. {t2}\n\nMeta:\n{desc}\n\nBody:\n{body}"
                     
                     st.download_button(
                         label="📥 Download Generated Content (.txt)",
-                        data=full_export_text,
-                        file_name=f"{keyword_input.replace(' ', '_')}_content.txt",
+                        data=export_data,
+                        file_name="content.txt",
                         mime="text/plain"
                     )
             else:
                 st.warning("Please enter a keyword first.")
+
 
 
 elif menu == "💬 Social Media Auto-DM":
